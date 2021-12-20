@@ -27,6 +27,7 @@ import com.pharmacy.atmycare.R;
 import com.pharmacy.atmycare.databinding.FragmentAdminManageATMxsBinding;
 import com.pharmacy.atmycare.databinding.FragmentAdminManageStocksBinding;
 import com.pharmacy.atmycare.model.ATMX;
+import com.pharmacy.atmycare.model.ManageAtmx;
 import com.pharmacy.atmycare.ui.AdminLayoutFragments.AdminDashboardFragment;
 
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class Admin_ManageATMxs_Fragment extends Fragment {
 
     private FragmentAdminManageATMxsBinding binding;
     private ManageAtmxsAdapter atmxsAdapter;
-    private List<ATMX> atmxList;
+    private List<ManageAtmx> atmxList;
     private DatabaseReference reference;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -73,7 +74,7 @@ public class Admin_ManageATMxs_Fragment extends Fragment {
                 {
                   for(DataSnapshot dataSnapshot : task.getResult().getChildren())
                   {
-                      ATMX atmx = dataSnapshot.getValue(ATMX.class);
+                      ManageAtmx atmx = dataSnapshot.getValue(ManageAtmx.class);
                       atmxList.add(atmx);
                   }
                   atmxsAdapter.notifyDataSetChanged();
