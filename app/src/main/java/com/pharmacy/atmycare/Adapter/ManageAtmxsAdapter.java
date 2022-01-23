@@ -12,17 +12,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.pharmacy.atmycare.R;
 import com.pharmacy.atmycare.model.ATMX;
+import com.pharmacy.atmycare.model.ManageAtmx;
 
 import java.util.List;
 
 public class ManageAtmxsAdapter extends RecyclerView.Adapter<ManageAtmxsAdapter.myViewHolder> {
 
-    private List<ATMX> atmxList;
+    private List<ManageAtmx> atmxList;
     private Context context;
-    public ManageAtmxsAdapter(List<ATMX> atmxList , Context context) {
+    public ManageAtmxsAdapter(List<ManageAtmx> atmxList , Context context) {
         this.atmxList = atmxList;
         this.context = context;
-
     }
 
     @NonNull
@@ -34,13 +34,12 @@ public class ManageAtmxsAdapter extends RecyclerView.Adapter<ManageAtmxsAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ManageAtmxsAdapter.myViewHolder holder, int position) {
-        ATMX atmx = atmxList.get(position);
+        ManageAtmx atmx = atmxList.get(position);
          holder.tvName.setText(atmx.getName());
         holder.tvMobile.setText(atmx.getMobileNo()+"");
         holder.tvAddress.setText(atmx.getAddress());
         holder.tvUserId.setText(atmx.getUserid());
         holder.tvPassword.setText(atmx.getPassword());
-
     }
 
     @Override
